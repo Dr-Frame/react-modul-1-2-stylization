@@ -1,9 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Panel.module.css';
 
 //дети не отобразятся в разметке, пока мы явно не укажем это
 const Panel = ({ title, children }) => (
-  <div>
+  <div className={styles.container}>
     {/* //рендер по условию, если СЛЕВА ДА - рендерим справа, если СЛЕВА НЕТ - undefined ничего не рендерит */}
     {title && <h2>{title}</h2>}
 
@@ -12,7 +13,7 @@ const Panel = ({ title, children }) => (
 );
 
 Panel.defaultProps = {
-  title: "",
+  title: '',
 };
 
 Panel.propTypes = {

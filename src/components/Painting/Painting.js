@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react';
 //импортируем путь к картинке для дефолтного значения
-import defaultImg from "./default.png";
+import defaultImg from './default.png';
+//импорт ксс стилей
+import './Painting.css';
 
 // импорт библиотеки PropTypes
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 //пропс это обьект настроек который приходт
 // вариант БЕЗ деструктуризации
@@ -26,14 +28,14 @@ const Painting = ({ url, title, authorUrl, authorTag, price, quantity }) => (
   /* условия так же можно выносить в отдельные переменные, если они большие например
   const availability = quantity < 10 ? "Заканчивается" : "есть в наличии"; */
 
-  <div>
+  <div className="Painting">
     <img src={url} alt={title} width="500"></img>
     <h2>{title}</h2>
     <p>
       author: <a href={authorUrl}>{authorTag}</a>
     </p>
     {/* рендер по условию */}
-    <p>Availability: {quantity < 10 ? "Заканчивается" : "есть в наличии"}</p>
+    <p>Availability: {quantity < 10 ? 'Заканчивается' : 'есть в наличии'}</p>
     <p> цена: {price} кредитов</p>
     <button type="button">Добавить в корзину</button>
   </div>

@@ -1,0 +1,15 @@
+.AppBar {
+  min-height: 100px;
+  background-color: teal;
+}
+
+.AppBar__nav {
+  padding: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  width: 500px;
+}

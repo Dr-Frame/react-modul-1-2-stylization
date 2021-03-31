@@ -1,0 +1,17 @@
+@value primary-text-color from '../../vars.module.css';
+
+.notification {
+  font-size: 20px;
+}
+
+.error {
+  composes: notification; /* как миксин в scss */
+  background-color: red;
+  color: primary-text-color;
+}
+
+.succes {
+  composes: notification;
+  background-color: green;
+  color: white;
+}

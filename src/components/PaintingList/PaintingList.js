@@ -1,16 +1,17 @@
-import React from "react";
-import Painting from "./Painting";
-import PropTypes from "prop-types";
+import React from 'react';
+import Painting from '../Painting/Painting';
+import PropTypes from 'prop-types';
+import './PaintingList.css';
 
 const PaintingList = ({ paintingData }) => (
   /* рендеринг коллекций */
 
   /* TODO: Ключи помогают опознать реакту элемент коллекции
           ЕСЛИ нету id, то используем что то уникальное например имя, цвет и т.д */
-  <ul>
+  <ul className="PaintingList">
     {paintingData.map(
       ({ url, id, title, price, authorUrl, authorTag, quantity }) => (
-        <li key={id}>
+        <li key={id} className="PaintingList__item">
           <Painting
             url={url}
             title={title}
@@ -20,7 +21,7 @@ const PaintingList = ({ paintingData }) => (
             quantity={quantity}
           />
         </li>
-      )
+      ),
     )}
   </ul>
 );
@@ -32,7 +33,7 @@ PaintingList.propTypes = {
     //проверяем только АЙДИ, другие проверяли раньше, нету смысла сейчас
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
 };
 
